@@ -12,7 +12,6 @@
 	String pwd = request.getParameter("pwd");
 	String chk = request.getParameter("check");
 	boolean login = false;
-
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection conn = null;
 	Statement stmt = null;
@@ -22,9 +21,7 @@
 		String jdbcDriver = "jdbc:mysql://localhost:3306/ch14?" + "useUnicode=true&characterEncoding=utf8";
 		String dbUser = "root";
 		String dbPass = "0000";
-		// String dbPass = "0000";
 		String query = "select * from MEMBER order by MEMBERID";
-
 		conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
 		stmt = conn.createStatement();
 		rs = stmt.executeQuery(query);
@@ -53,26 +50,6 @@
 			} catch (SQLException ex) {
 			}
 	}
-	// 	HashMap<String, String> map = new HashMap<String, String>();
-	// 	map.put("melius16", "0016");
-	// 	map.put("melius17", "0017");
-	// 	map.put("melius18", "0018");
-	// 	map.put("melius19", "0019");
-
-	// 	String id = request.getParameter("id");
-	// 	String pwd = request.getParameter("pwd");
-	// 	String chk = request.getParameter("check");
-
-	// 	boolean login = false;
-	// 	Iterator it = map.entrySet().iterator();
-	// 	while (it.hasNext()) {
-	// 		Map.Entry<String, String> entry = (Map.Entry<String, String>) it.next();
-	// 		if (id.equals(entry.getKey()) && pwd.equals(entry.getValue())) {
-	// 			login = true;
-	// 		}
-	// 	}
-
-	// 	if (id.equals("melius17") && pwd.equals("0000")) {
 	if (login) {
 		session.setAttribute("MEMBERID", id);
 		if (chk != null && chk.equals("on")) {
@@ -99,12 +76,3 @@
 		reqDis.forward(request, response);
 	}
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-</body>
-</html>

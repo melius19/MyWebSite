@@ -42,7 +42,8 @@
 	</div>
 
 	<div class="container" style="background-color: #f1f1f1">
-		<button type="button" class="cancelbtn">Cancel</button>
+		<button type="button" class="cancelbtn"
+			onclick="window.location.href='./main.jsp'">Cancel</button>
 		<span class="psw">Forgot <a href="#">password?</a></span>
 	</div>
 </form>
