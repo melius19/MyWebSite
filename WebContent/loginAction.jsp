@@ -8,6 +8,7 @@
 <%@ page import="java.sql.ResultSet"%>
 <%@ page import="java.sql.SQLException"%>
 <%
+	request.setCharacterEncoding("utf-8"); // kor
 	String id = request.getParameter("id");
 	String pwd = request.getParameter("pwd");
 	String chk = request.getParameter("check");
