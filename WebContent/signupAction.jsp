@@ -19,9 +19,15 @@
 	PreparedStatement pstmt = null;
 
 	try {
-		String jdbcDriver = "jdbc:mysql://localhost:3306/ch14?useUnicode=true&characterEncoding=utf8";
+		// String dbend = "localhost";
+		// String dbUser = "root";
+		// String dbPass = "0000";
+
+		String dbend = "mydbinstance.cj6bnsilnilw.ap-northeast-2.rds.amazonaws.com";
 		String dbUser = "root";
-		String dbPass = "0000";
+		String dbPass = "12345678";
+
+		String jdbcDriver = "jdbc:mysql://" + dbend + ":3306/ch14?useUnicode=true&characterEncoding=utf8";
 		conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
 		pstmt = conn.prepareStatement("insert into MEMBER values (?,?,?,?)");
 		pstmt.setString(1, id);
